@@ -1,0 +1,213 @@
+#+title: Learn Variables
+
+* Links to Consoles to use on the web:
+- [[https://jsbin.com/nazaconebi/edit?js,console][jsBin]]
+- [[https://codepen.io/danfedick][CodePen]]
+- [[https://www.udemy.com/course/js-masterclass/learn/lecture/6826818#overview][Learn JS Master Class]]
+* Set a variable
+#+begin_src javascript
+let myDogsName = "cujo";
+#+end_src
+* To write the variable out to console run the following:
+#+begin_src javascript
+console.log('myDogsName');
+#+end_src
+* You can rename a variable
+Anything that was set previously as that name is garbage collected later.
+#+begin_src javascript
+myDogsName = "dogo";
+#+end_src
+* Constants:
+A constant is a variable that cannot be changed once it is set.
+
+#+begin_src javascript
+const pi = 3.14
+#+end_src
+
+If you try to set a constant again you will get an error:
+The following is invalid:
+#+begin_src javascript
+pi = 2
+#+end_src
+
+* Valid variable name:
+- Cannot be a keyword:
+  Examples:
+  - let, const, for, while etc..
+- Cannot start with a number:
+- Only 2 special chars allowed:  =$= and =_=
+- Cannot use =#= or =-= or =%=
+
+
+This is not allowed:
+  #+begin_src javascript
+    let let = 1
+  #+end_src
+
+  #+begin_src javascript
+    let 1 = 1
+  #+end_src
+
+* Naming Conventions:
+** Use Camel Case for variables:
+    =myDogsName=
+** Use Upper Camel Case for Classes:
+    =CreateMyDogsName=
+** Can use snake case.
+** Cannot use kebab-case
+** Constant = Use All upper-case:
+#+begin_src javascript
+const PI = 3.14;
+#+end_src
+
+* Basic Debugging
+The following command will bring up the debugger and stop at each variable along the code.
+Open up console.. Add =debugger;= line and run.
+#+begin_src javascript
+debugger;
+#+end_src
+
+* Data Types:
+There are 2 data types:
+- primitive (single value)
+  + null
+  + undefined
+  + string
+  + number
+  + boolean
+  + symbol
+
+- reference (complex value)
+  + array
+  + object
+  + function
+  + set/weakset
+  + map/weakmap
+  + date
+
+* Function
+typeof
+
+The Typeof function gives you string in this case:
+#+begin_src javascript
+let myDogsName = "beast";
+console.log(typeof(myDogsName));
+#+end_src
+
+set a variable to null:
+#+begin_src javascript
+let myDogsName = 'cujo';
+
+myDogsName = null
+console.log(myDogsName);
+#+end_src
+
+The type of a null is an object:
+#+begin_src javascript
+let myDogsName = 'beast';
+myDogsName = null;
+console.log(typeof(beast));
+#+end_src
+* Boolean Primitive:
+-  True or false primitives are set like:
+
+ #+begin_src javascript
+    let iAmRight = true;
+    let theyAreRight = false;
+    console.log(typeof(iAmRight));
+ #+end_src
+
+- Get the opposite value from a variable by using the exclamation mark:
+
+ #+begin_src javascript
+let iAmright = true;
+
+console.log(!iAmRight);
+ #+end_src
+
+* String Primitive:
+- String interpolation, use the following to surround the string:
+    =`=
+    ='=
+    ="=
+    Strings can be almost any length.
+#+begin_src javascript
+let myDogsName = 'cujo';
+#+end_src
+
+
+- Replace a String:
+#+begin_src javascript
+    let myDogsName = 'cujo';
+    myDogsName = 'dogo';
+    console.log(myDogsName);
+#+end_src
+
+- If using quotes in a quote:
+#+begin_src javascript
+    let myDogsName = 'I lov \'cujo\''
+    myDogsName = 'I lov "cujo"'
+#+end_src
+
+- Concatenating strings:
+#+begin_src  javascript
+    let name = 'john';
+    let greetings = 'hello';
+
+    let message = greetings + name;
+        console.log(message);
+
+    let message = greetings + ' ' + name;
+        console.log(message);
+#+end_src
+
+#+result
+  "hellojohn"
+  "hello john"
+#+result
+
+
+
+- Template Strings
+  Helps us build complex strings
+
+  #+begin_src javascript
+    let name = 'john';
+    let greetings = 'hello';
+
+    let message = `${greetings} ${name}`;
+
+    console.log(message);
+  #+end_src
+
+- Template Strings with integers:
+  #+begin_src javascript
+    let a = 1;
+    let b = 2;
+
+    let total = `
+        my total is:
+        ${1+2}
+    `
+    console.log(total);
+  #+end_src
+
+  #+result
+  "The total of 1 plus 2 = 3"
+  #+result
+
+** String Methods:
+
+  #+begin_src javascript
+    let myDogsName = 'cujo';
+    console.log(myDogsName.length);
+  #+end_src
+
+  Find out what methods are available:
+
+  #+begin_src javascript
+    let myDogsName = 'cujo';
+    console.log(myDogsName.__proto__);
+  #+end_src
+
+*
